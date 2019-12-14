@@ -48,3 +48,10 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+group :production do
+  gem 'pg', '~> 0.20' # the latest pg gem does not play nicely with Heroku...
+  gem 'rails_12factor'
+end
+
+gem 'httparty'
